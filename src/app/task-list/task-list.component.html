@@ -1,0 +1,10 @@
+<md-list>
+  <task-item-create (create)="create($event)"></task-item-create>
+  <task-item
+    *ngFor="let task of tasks$ | async; trackBy: identify"
+    [task]="task"
+    (destroy)="destroy(task)"
+    (save)="save(task, $event)"
+    (toggle)="toggle(task)">
+  </task-item>
+</md-list>

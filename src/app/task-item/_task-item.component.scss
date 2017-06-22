@@ -1,0 +1,52 @@
+@import "~@angular/material/theming";
+
+@mixin task-item-theme($theme) {
+  $foreground: map_get($theme, foreground);
+
+  .task-item--state-completed {
+    .task-item__name,
+    .task-item__input {
+      color: mat-color($foreground, hint-text);
+    }
+  }
+
+  .mat-list .mat-list-item .task-item__checkbox.mat-list-icon {
+    height: auto;
+    font-size: inherit;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .task-item__input.mat-input-container {
+    display: none;
+  }
+
+  .task-item--state-editing {
+    .task-item__name {
+      display: none;
+    }
+
+    .task-item__input {
+      display: block;
+    }
+  }
+
+  .task-item__input {
+    width: 100%;
+
+    .mat-input-underline {
+      bottom: 1px;
+    }
+    .mat-input-infix {
+      border: 0;
+    }
+
+    .mat-input-wrapper {
+      padding: 0;
+    }
+  }
+
+  .task-item__remove.mat-icon-button {
+    color: $black-12-opacity;
+  }
+}

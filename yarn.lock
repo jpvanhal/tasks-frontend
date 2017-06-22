@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@angular/animations@^4.0.0":
+"@angular/animations@^4.2.3":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.2.3.tgz#686926a69d0c9c26a9bcad26cd6fbd0245bb6c1b"
   dependencies:
@@ -116,6 +116,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/material@^2.0.0-beta.7":
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-beta.7.tgz#2584aaf1ffbe24779916345f1ac82921ccbc2577"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/platform-browser-dynamic@^4.0.0":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.2.3.tgz#87ce41f5779d31cbc68c71db6bfeba216d135554"
@@ -152,6 +158,31 @@
     loader-utils "^1.0.2"
     magic-string "^0.19.0"
     source-map "^0.5.6"
+
+"@orbit/core@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/core/-/core-0.11.1.tgz#6cc28589a400a94760b630179e7b71cc7f16248d"
+  dependencies:
+    "@orbit/utils" "^0.11.1"
+
+"@orbit/data@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/data/-/data-0.11.1.tgz#b31d77ac849dd02f92ceaeb5a89e58834b55530a"
+  dependencies:
+    "@orbit/core" "^0.11.1"
+    "@orbit/utils" "^0.11.1"
+
+"@orbit/store@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/store/-/store-0.11.1.tgz#416319426583427b280584ed2a7767ab536ce099"
+  dependencies:
+    "@orbit/core" "^0.11.1"
+    "@orbit/data" "^0.11.1"
+    "@orbit/utils" "^0.11.1"
+
+"@orbit/utils@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/utils/-/utils-0.11.1.tgz#98f4b1233cb2bf9baa414b517646de4949066115"
 
 "@types/jasmine@2.5.45":
   version "2.5.45"
@@ -3140,11 +3171,11 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@4.1.0, object-assign@^4.0.1:
+object-assign@4.1.0, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
 
-object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -5069,16 +5100,9 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-ws@1.1.2:
+ws@1.1.2, ws@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.2.tgz#8a244fa052401e08c9886cf44a85189e1fd4067f"
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
-
-ws@^1.0.1:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"

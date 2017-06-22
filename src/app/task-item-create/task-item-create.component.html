@@ -1,0 +1,15 @@
+<md-list-item>
+  <md-icon md-list-icon>add</md-icon>
+  <div md-line>
+    <md-input-container class="task-item-create__input" floatPlaceholder="never">
+      <input
+        #input
+        mdInput
+        placeholder="What task do you need to complete?"
+        [(ngModel)]="editText"
+        (keyup.enter)="submit($event)"
+        (keyup.escape)="cancel()">
+    </md-input-container>
+  </div>
+</md-list-item>
+<md-divider></md-divider>

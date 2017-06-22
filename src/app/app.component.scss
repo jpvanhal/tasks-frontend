@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

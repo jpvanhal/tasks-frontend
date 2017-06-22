@@ -1,0 +1,14 @@
+@import "~@angular/material/theming";
+@import "./app/task-item/task-item.component";
+@import "./app/task-item-create/task-item-create.component";
+
+@include mat-core();
+
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$theme:   mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+@include task-item-theme($theme);
+@include task-item-create-theme($theme);

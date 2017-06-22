@@ -1,0 +1,21 @@
+@import "~@angular/material/theming";
+
+@mixin task-item-create-theme($theme) {
+  $foreground: map_get($theme, foreground);
+
+  .task-item-create__input {
+    width: 100%;
+
+    .mat-input-underline {
+      bottom: 1px;
+      background-color: transparent;
+    }
+    .mat-input-infix {
+      border: 0;
+    }
+
+    .mat-input-wrapper {
+      padding: 0;
+    }
+  }
+}
