@@ -26,6 +26,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@angular/service-worker": "^1.0.0-beta.16",
     "@orbit/store": "^0.11.1",
     "@orbit/utils": "^0.11.1",
     "core-js": "^2.4.1",
