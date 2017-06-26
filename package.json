@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "npm rebuild node-sass",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build -- --prod"
   },
   "private": true,
   "dependencies": {

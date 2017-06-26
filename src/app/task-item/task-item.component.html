@@ -3,7 +3,13 @@
   <div md-line>
     <div class="task-item__name" (click)="edit()">{{task.attributes.title}}</div>
     <md-input-container class="task-item__input">
-      <input #input mdInput [(ngModel)]="editText" (blur)="submit($event)" (keyup.enter)="submit($event)" (keyup.escape)="cancel()">
+      <input
+        #input
+        mdInput
+        [(ngModel)]="editText"
+        (blur)="submit()"
+        (keyup.enter)="submit()"
+        (keyup.escape)="cancel()">
     </md-input-container>
   </div>
   <button class="task-item__remove" md-icon-button (click)="destroy.emit()"><md-icon>delete</md-icon></button>

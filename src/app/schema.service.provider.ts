@@ -1,7 +1,9 @@
 import { Schema } from '@orbit/data';
 
-export function schemaFactory(): Schema {
-  return new Schema({
+import { SchemaService } from './schema.service';
+
+export function schemaServiceFactory() {
+  return new SchemaService({
     models: {
       task: {
         attributes: {
@@ -13,3 +15,9 @@ export function schemaFactory(): Schema {
     },
   });
 }
+
+export const schemaServiceProvider = {
+  provide: SchemaService,
+  useFactory: schemaServiceFactory,
+  deps: [],
+};

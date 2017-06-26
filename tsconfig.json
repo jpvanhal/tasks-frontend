@@ -15,6 +15,12 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "paths":{
+      "@orbit/core": ["../node_modules/@orbit/core/dist/commonjs/es5"],
+      "@orbit/data": ["../node_modules/@orbit/data/dist/commonjs/es5"],
+      "@orbit/store": ["../node_modules/@orbit/store/dist/commonjs/es5"],
+      "@orbit/utils": ["../node_modules/@orbit/utils/dist/commonjs/es5"]
+    }
   }
 }
