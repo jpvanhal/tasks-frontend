@@ -15,10 +15,11 @@ import Store from '@orbit/store';
 
 import { AppComponent } from './app.component';
 import { LiveQueryService } from './live-query.service';
+import { schemaFactory } from './schema.provider';
 import { storeFactory } from './store.provider';
+import { TaskItemCreateComponent } from './task-item-create/task-item-create.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskItemCreateComponent } from './task-item-create/task-item-create.component';
 
 
 @NgModule({
@@ -43,17 +44,7 @@ import { TaskItemCreateComponent } from './task-item-create/task-item-create.com
     KeyMap,
     {
       provide: Schema,
-      useValue: new Schema({
-        models: {
-          task: {
-            attributes: {
-              title: { type: 'string' },
-              completed: { type: 'boolean' },
-              created: { type: 'date' },
-            },
-          },
-        },
-      }),
+      useFactory: schemaFactory,
     },
     LiveQueryService,
     {

@@ -1,7 +1,7 @@
 import { KeyMap, Schema } from '@orbit/data';
 import Store from '@orbit/store';
 
-export function storeFactory(keyMap: KeyMap, schema: Schema) {
+export function storeFactory(keyMap: KeyMap, schema: Schema): Store {
   const store = new Store({ keyMap, schema });
   const tasks = [
     { title: 'Meeting with Peter', completed: false, created: '2017-06-16T00:00:00.000Z' },
