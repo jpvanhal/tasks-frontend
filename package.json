@@ -50,6 +50,10 @@
   },
   "jest": {
     "preset": "jest-preset-angular",
-    "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts",
+    "testPathIgnorePatterns": [
+      "<rootDir>/.cache/",
+      "<rootDir>/node_modules/"
+    ]
   }
 }
