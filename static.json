@@ -1,8 +1,5 @@
 {
   "root": "dist/",
-  "routes": {
-    "/**": "index.html"
-  },
   "https_only": true,
   "headers": {
     "/**": {
