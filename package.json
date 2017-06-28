@@ -32,6 +32,7 @@
     "@orbit/store": "^0.11.1",
     "@orbit/utils": "^0.11.1",
     "core-js": "^2.4.1",
+    "material-design-icons": "^3.0.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

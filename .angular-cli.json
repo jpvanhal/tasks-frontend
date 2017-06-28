@@ -20,6 +20,7 @@
       "prefix": "task",
       "serviceWorker": true,
       "styles": [
+        "../node_modules/material-design-icons/iconfont/material-icons.css",
         "styles.scss"
       ],
       "scripts": [],
