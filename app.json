@@ -2,5 +2,13 @@
   "buildpacks": [
     { "url": "heroku/nodejs" },
     { "url": "https://github.com/heroku/heroku-buildpack-static.git" }
-  ]
+  ],
+  "environments": {
+    "test": {
+      "buildpacks":[
+        { "url": "heroku/nodejs" },
+        { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" }
+      ]
+    }
+  }
 }
