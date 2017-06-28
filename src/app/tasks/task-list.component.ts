@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { LiveQueryService, StoreService } from '../core';
 
 @Component({
-  selector: 'task-list',
+  selector: 'app-task-list',
   templateUrl: './task-list.component.html',
 })
 export class TaskListComponent implements OnInit {

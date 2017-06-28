@@ -1,6 +1,6 @@
 @import "~@angular/material/theming";
-@import "./app/task-item/task-item.component";
-@import "./app/task-item-create/task-item-create.component";
+@import "./app/tasks/task-item.component";
+@import "./app/tasks/task-item-create.component";
 
 @include mat-core();
 

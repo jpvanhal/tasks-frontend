@@ -117,7 +117,7 @@
     "component-selector": [
       true,
       "element",
-      "task",
+      "app",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

@@ -1,5 +1,4 @@
 import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { coordinatorProviders } from './coordinator.provider';
 import { backupSourceProvider } from './data-sources/backup-source.provider';

@@ -1,10 +1,10 @@
 <md-list>
-  <task-item-create (create)="create($event)"></task-item-create>
-  <task-item
+  <app-task-item-create (create)="create($event)"></app-task-item-create>
+  <app-task-item
     *ngFor="let task of tasks$ | async; trackBy: identify"
     [task]="task"
     (destroy)="destroy(task)"
     (save)="save(task, $event)"
     (toggle)="toggle(task)">
-  </task-item>
+  </app-task-item>
 </md-list>

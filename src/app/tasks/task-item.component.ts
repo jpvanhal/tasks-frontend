@@ -13,7 +13,7 @@ import { Record } from '@orbit/data';
 import { clone } from '@orbit/utils';
 
 @Component({
-  selector: 'task-item',
+  selector: 'app-task-item',
   templateUrl: './task-item.component.html',
 })
 export class TaskItemComponent implements OnChanges {

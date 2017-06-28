@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'task-item-create',
+  selector: 'app-task-item-create',
   templateUrl: './task-item-create.component.html',
 })
 export class TaskItemCreateComponent {
