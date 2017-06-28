@@ -8,5 +8,10 @@
     "/**": {
       "Strict-Transport-Security": "max-age=31536000"
     }
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "https://${BACKEND_APP_NAME}.herokuapp.com/"
+    }
   }
 }
