@@ -1,8 +1,9 @@
+import { Provider } from '@angular/core';
 import { Schema } from '@orbit/data';
 
 import { SchemaService } from './schema.service';
 
-export function schemaServiceFactory() {
+export function createSchema(): SchemaService {
   return new SchemaService({
     models: {
       task: {
@@ -16,8 +17,8 @@ export function schemaServiceFactory() {
   });
 }
 
-export const schemaServiceProvider = {
+export const schemaProvider: Provider = {
   provide: SchemaService,
-  useFactory: schemaServiceFactory,
+  useFactory: createSchema,
   deps: [],
 };

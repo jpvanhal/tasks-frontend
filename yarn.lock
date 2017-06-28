@@ -166,6 +166,10 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
+"@orbit/coordinator@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/coordinator/-/coordinator-0.11.1.tgz#aca080dda4de6eadb23b81e7f409d4339be9e9b8"
+
 "@orbit/core@^0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@orbit/core/-/core-0.11.1.tgz#6cc28589a400a94760b630179e7b71cc7f16248d"
@@ -177,6 +181,14 @@
   resolved "https://registry.yarnpkg.com/@orbit/data/-/data-0.11.1.tgz#b31d77ac849dd02f92ceaeb5a89e58834b55530a"
   dependencies:
     "@orbit/core" "^0.11.1"
+    "@orbit/utils" "^0.11.1"
+
+"@orbit/indexeddb@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/indexeddb/-/indexeddb-0.11.1.tgz#d5b4703ee33fd064856225be812f7fe08994c358"
+  dependencies:
+    "@orbit/core" "^0.11.1"
+    "@orbit/data" "^0.11.1"
     "@orbit/utils" "^0.11.1"
 
 "@orbit/store@^0.11.1":

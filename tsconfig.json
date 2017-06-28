@@ -17,6 +17,7 @@
       "dom"
     ],
     "paths":{
+      "@orbit/coordinator": ["../node_modules/@orbit/coordinator/dist/commonjs/es5"],
       "@orbit/core": ["../node_modules/@orbit/core/dist/commonjs/es5"],
       "@orbit/data": ["../node_modules/@orbit/data/dist/commonjs/es5"],
       "@orbit/store": ["../node_modules/@orbit/store/dist/commonjs/es5"],

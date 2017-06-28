@@ -12,7 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { OrbitModule } from './orbit';
+import { CoreModule } from './core';
 import { TaskItemCreateComponent } from './task-item-create/task-item-create.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { TaskListComponent } from './task-list/task-list.component';
@@ -27,6 +27,7 @@ import { TaskListComponent } from './task-list/task-list.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CoreModule,
     FormsModule,
     MdButtonModule,
     MdCheckboxModule,
@@ -34,7 +35,6 @@ import { TaskListComponent } from './task-list/task-list.component';
     MdInputModule,
     MdListModule,
     MdToolbarModule,
-    OrbitModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

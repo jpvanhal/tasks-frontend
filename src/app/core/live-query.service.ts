@@ -10,23 +10,23 @@ import { StoreService } from './store.service';
 
 @Injectable()
 export class LiveQueryService {
-  constructor(private storeService: StoreService) { }
+  constructor(private store: StoreService) { }
 
   query(queryOrExpression: QueryOrExpression, options?: object, id?: string): Observable<any> {
-    const query = Query.from(queryOrExpression, options, id, this.storeService.queryBuilder);
+    const query = Query.from(queryOrExpression, options, id, this.store.queryBuilder);
 
-    this.storeService.query(query);
+    this.store.query(query);
 
     const patch$ = fromEventPattern(
-      (handler) => this.storeService.cache.on('patch', handler),
-      (handler) => this.storeService.cache.off('patch', handler),
+      (handler) => this.store.cache.on('patch', handler),
+      (handler) => this.store.cache.off('patch', handler),
     );
     const reset$ = fromEventPattern(
-      (handler) => this.storeService.cache.on('reset', handler),
-      (handler) => this.storeService.cache.off('reset', handler),
+      (handler) => this.store.cache.on('reset', handler),
+      (handler) => this.store.cache.off('reset', handler),
     );
     const change$ = merge(patch$, reset$);
-    const liveResults$ = map.call(change$, () => this.storeService.cache.query(query));
-    return startWith.call(liveResults$, this.storeService.cache.query(query));
+    const liveResults$ = map.call(change$, () => this.store.cache.query(query));
+    return startWith.call(liveResults$, this.store.cache.query(query));
   }
 }

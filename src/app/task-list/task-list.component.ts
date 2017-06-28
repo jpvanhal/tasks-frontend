@@ -3,7 +3,7 @@ import { Record, TransformBuilder } from '@orbit/data';
 import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
 
-import { LiveQueryService, StoreService } from '../orbit';
+import { LiveQueryService, StoreService } from '../core';
 
 @Component({
   selector: 'task-list',

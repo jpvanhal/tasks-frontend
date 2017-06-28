@@ -6,7 +6,7 @@ import { SchemaService } from './schema.service';
 
 @Injectable()
 export class StoreService extends Store {
-  constructor(keyMapService: KeyMapService, schemaService: SchemaService ) {
-    super({ keyMap: keyMapService, schema: schemaService });
+  constructor(keyMap: KeyMapService, schema: SchemaService ) {
+    super({ keyMap, schema });
   }
 }
