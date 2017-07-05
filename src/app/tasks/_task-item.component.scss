@@ -4,7 +4,7 @@
   $foreground: map_get($theme, foreground);
 
   .task-item--state-completed {
-    .task-item__name,
+    .task-item__title,
     .task-item__input {
       color: mat-color($foreground, hint-text);
     }
@@ -22,7 +22,7 @@
   }
 
   .task-item--state-editing {
-    .task-item__name {
+    .task-item__title {
       display: none;
     }
 
@@ -46,7 +46,7 @@
     }
   }
 
-  .task-item__remove.mat-icon-button {
+  .task-item__destroy.mat-icon-button {
     color: $black-12-opacity;
   }
 }

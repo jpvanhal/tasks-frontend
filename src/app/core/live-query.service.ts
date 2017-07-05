@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Query, QueryOrExpression } from '@orbit/data';
+import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
 import { fromEventPattern } from 'rxjs/observable/fromEventPattern';
 import { merge } from 'rxjs/observable/merge';
 import { map } from 'rxjs/operator/map';
 import { startWith } from 'rxjs/operator/startWith';
 
-import { StoreService } from './store.service';
 
 @Injectable()
 export class LiveQueryService {
-  constructor(private store: StoreService) { }
+  constructor(private store: Store) { }
 
   query(queryOrExpression: QueryOrExpression, options?: object, id?: string): Observable<any> {
     const query = Query.from(queryOrExpression, options, id, this.store.queryBuilder);

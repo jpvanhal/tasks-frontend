@@ -4,7 +4,7 @@
     *ngFor="let task of tasks$ | async; trackBy: identify"
     [task]="task"
     (destroy)="destroy(task)"
-    (save)="save(task, $event)"
+    (update)="update(task, $event)"
     (toggle)="toggle(task)">
   </app-task-item>
 </md-list>

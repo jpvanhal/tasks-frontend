@@ -21,19 +21,20 @@ export class TaskItemComponent implements OnChanges {
   @Input() task: Record;
   @Output() destroy = new EventEmitter();
   @Output() toggle = new EventEmitter();
-  @Output() save = new EventEmitter<string>();
+  @Output() update = new EventEmitter<string>();
   @HostBinding('class.task-item--state-editing') editing = false;
   @ViewChild(MdInputDirective) input: MdInputDirective;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.task) {
       this.task = clone(changes.task.currentValue);
+      this.editing = false;
     }
   }
 
   @HostBinding('class.task-item--state-completed')
   get completed() {
-    return this.task.attributes.completed;
+    return this.task.attributes.isCompleted;
   }
 
   edit() {
@@ -43,15 +44,17 @@ export class TaskItemComponent implements OnChanges {
   }
 
   submit() {
-    const value = this.editText.trim();
-    if (value) {
-      this.save.emit(value);
+    if (this.editing) {
+      const value = this.editText.trim();
+      if (value) {
+        this.task.attributes.title = value;
+        this.update.emit(this.task.attributes.title);
+      }
+      this.editing = false;
     }
-    this.editing = false;
   }
 
   cancel() {
-    this.editText = this.task.attributes.title;
     this.editing = false;
   }
 }

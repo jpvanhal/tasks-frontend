@@ -63,6 +63,12 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 
 /**
+ * Fetch.
+ * Needed for: iOS 10.2, IE11 and Safari 10
+ */
+import 'whatwg-fetch';
+
+/**
  * Date, currency, decimal and percent pipes.
  * Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
  */

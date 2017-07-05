@@ -29,11 +29,14 @@
     "@angular/service-worker": "^1.0.0-beta.16",
     "@orbit/coordinator": "^0.11.1",
     "@orbit/indexeddb": "^0.11.1",
+    "@orbit/indexeddb-bucket": "^0.11.1",
+    "@orbit/jsonapi": "^0.11.1",
     "@orbit/store": "^0.11.1",
     "@orbit/utils": "^0.11.1",
     "core-js": "^2.4.1",
     "material-design-icons": "^3.0.1",
     "rxjs": "^5.1.0",
+    "whatwg-fetch": "^2.0.3",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

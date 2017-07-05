@@ -183,9 +183,24 @@
     "@orbit/core" "^0.11.1"
     "@orbit/utils" "^0.11.1"
 
+"@orbit/indexeddb-bucket@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/indexeddb-bucket/-/indexeddb-bucket-0.11.1.tgz#7a79d94f071596d43ad5c1627ba10ca44712676a"
+  dependencies:
+    "@orbit/core" "^0.11.1"
+    "@orbit/utils" "^0.11.1"
+
 "@orbit/indexeddb@^0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@orbit/indexeddb/-/indexeddb-0.11.1.tgz#d5b4703ee33fd064856225be812f7fe08994c358"
+  dependencies:
+    "@orbit/core" "^0.11.1"
+    "@orbit/data" "^0.11.1"
+    "@orbit/utils" "^0.11.1"
+
+"@orbit/jsonapi@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@orbit/jsonapi/-/jsonapi-0.11.1.tgz#3481aaf9da964f768af93587907605f0b9736824"
   dependencies:
     "@orbit/core" "^0.11.1"
     "@orbit/data" "^0.11.1"
@@ -5079,6 +5094,10 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.1.tgz#76899499c184b6ef754377c2dbb0cd6cb55d29e7"
+
+whatwg-fetch@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
 when@~3.6.x:
   version "3.6.4"

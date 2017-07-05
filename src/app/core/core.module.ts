@@ -1,21 +1,17 @@
-import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { KeyMap } from '@orbit/data';
 
-import { coordinatorProviders } from './coordinator.provider';
-import { backupSourceProvider } from './data-sources/backup-source.provider';
-import { KeyMapService } from './key-map.service';
+import { OrbitModule } from '../orbit';
 import { LiveQueryService } from './live-query.service';
 import { throwIfAlreadyLoaded } from './module-import-guard';
-import { schemaProvider } from './schema.provider';
-import { StoreService } from './store.service';
 
 @NgModule({
+  imports: [
+    OrbitModule,
+  ],
   providers: [
-    backupSourceProvider,
-    ...coordinatorProviders,
-    KeyMapService,
+    KeyMap,
     LiveQueryService,
-    schemaProvider,
-    StoreService,
   ]
 })
 export class CoreModule {

@@ -3,7 +3,7 @@ import { Record, TransformBuilder } from '@orbit/data';
 import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
 
-import { LiveQueryService, StoreService } from '../core';
+import { LiveQueryService } from '../core';
 
 @Component({
   selector: 'app-task-list',
@@ -12,37 +12,37 @@ import { LiveQueryService, StoreService } from '../core';
 export class TaskListComponent implements OnInit {
   tasks$: Observable<Record[]>;
 
-  constructor(private liveQuery: LiveQueryService, private storeService: StoreService) { }
+  constructor(private liveQuery: LiveQueryService, private store: Store) { }
 
   ngOnInit() {
-    this.tasks$ = this.liveQuery.query(q => q.findRecords('task').sort('-created'), {
+    this.tasks$ = this.liveQuery.query(q => q.findRecords('task').sort('-createdAt'), {
       label: 'Find all tasks',
     });
   }
 
   create(title: string) {
     const task = {
-      id: this.storeService.schema.generateId('task'),
+      id: this.store.schema.generateId('task'),
       type: 'task',
       attributes: {
         title,
-        completed: false,
-        created: new Date().toISOString(),
+        isCompleted: false,
+        createdAt: new Date().toISOString(),
       },
     };
-    this.storeService.update((t: TransformBuilder) => [t.addRecord(task)]);
+    this.store.update((t: TransformBuilder) => [t.addRecord(task)]);
   }
 
   toggle(task: Record) {
-    this.storeService.update((t: TransformBuilder) => [t.replaceAttribute(task, 'completed', !task.attributes.completed)]);
+    this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'isCompleted', !task.attributes.isCompleted)]);
   }
 
   destroy(task: Record) {
-    this.storeService.update((t: TransformBuilder) => [t.removeRecord(task)]);
+    this.store.update((t: TransformBuilder) => [t.removeRecord(task)]);
   }
 
-  save(task: Record, newTitle: string) {
-    this.storeService.update((t: TransformBuilder) => [t.replaceAttribute(task, 'title', newTitle)]);
+  update(task: Record, newTitle: string) {
+    this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'title', newTitle)]);
   }
 
   identify(index: number, task: Record) {
