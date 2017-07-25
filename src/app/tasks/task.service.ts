@@ -18,7 +18,7 @@ export class TaskService {
 
   create(title: string): Promise<void> {
     const task: Task = {
-      id: this.store.schema.generateId('task'),
+      id: undefined,
       type: 'task',
       attributes: {
         title,
@@ -26,18 +26,26 @@ export class TaskService {
         createdAt: new Date().toISOString(),
       },
     };
-    return this.store.update((t: TransformBuilder) => [t.addRecord(task)]);
+    return this.store.update((t: TransformBuilder) => [t.addRecord(task)], {
+      label: 'Create task',
+    });
   }
 
   toggle(task: Task): Promise<void> {
-    return this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'isCompleted', !task.attributes.isCompleted)]);
+    return this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'isCompleted', !task.attributes.isCompleted)], {
+      label: 'Toggle task',
+    });
   }
 
   destroy(task: Task): Promise<void> {
-    return this.store.update((t: TransformBuilder) => [t.removeRecord(task)]);
+    return this.store.update((t: TransformBuilder) => [t.removeRecord(task)], {
+      label: 'Destroy task',
+    });
   }
 
   update(task: Task, newTitle: string): Promise<void> {
-    return this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'title', newTitle)]);
+    return this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'title', newTitle)], {
+      label: 'Update task',
+    });
   }
 }

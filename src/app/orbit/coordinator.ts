@@ -12,17 +12,8 @@ export function initializeCoordinator(coordinator: Coordinator) {
 
     return backup.pull((q) => q.findRecords())
       .then((transform) => store.sync(transform))
-      .then(() => {
-        Object.keys(store.schema.models).forEach((type) => {
-          const records = store.cache.records(type);
-          records.values.forEach((record) => store.keyMap.pushRecord(record));
-        });
-      })
       .then(() => backup.transformLog.clear())
       .then(() => store.transformLog.clear())
-      .then(() => {
-        console.log('Key map: ', store.keyMap._data);
-      })
       .then(() => coordinator.activate());
   }
 }

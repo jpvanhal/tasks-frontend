@@ -166,57 +166,62 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
-"@orbit/coordinator@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/coordinator/-/coordinator-0.11.1.tgz#aca080dda4de6eadb23b81e7f409d4339be9e9b8"
+"@orbit/coordinator@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/coordinator/-/coordinator-0.15.0.tgz#f3c5a8636f3bd69a6ee148dcad0fa9498afd4536"
 
-"@orbit/core@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/core/-/core-0.11.1.tgz#6cc28589a400a94760b630179e7b71cc7f16248d"
+"@orbit/core@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/core/-/core-0.15.0.tgz#88147f65573b0b8fad8fcd89fd2364718625ab92"
   dependencies:
-    "@orbit/utils" "^0.11.1"
+    "@orbit/utils" "^0.15.0"
 
-"@orbit/data@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/data/-/data-0.11.1.tgz#b31d77ac849dd02f92ceaeb5a89e58834b55530a"
+"@orbit/data@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/data/-/data-0.15.0.tgz#544bd00f62c6fe3417b7696cc2e29ca2181cca01"
   dependencies:
-    "@orbit/core" "^0.11.1"
-    "@orbit/utils" "^0.11.1"
+    "@orbit/core" "^0.15.0"
+    "@orbit/utils" "^0.15.0"
 
-"@orbit/indexeddb-bucket@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/indexeddb-bucket/-/indexeddb-bucket-0.11.1.tgz#7a79d94f071596d43ad5c1627ba10ca44712676a"
+"@orbit/immutable@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/immutable/-/immutable-0.15.0.tgz#c4009dd41a8fb2b560e9e3e276ee2fc43d60a7e3"
+
+"@orbit/indexeddb-bucket@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/indexeddb-bucket/-/indexeddb-bucket-0.15.0.tgz#1ef525a23380ac1be07fb73eb3a0e0f4618210b9"
   dependencies:
-    "@orbit/core" "^0.11.1"
-    "@orbit/utils" "^0.11.1"
+    "@orbit/core" "^0.15.0"
+    "@orbit/utils" "^0.15.0"
 
-"@orbit/indexeddb@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/indexeddb/-/indexeddb-0.11.1.tgz#d5b4703ee33fd064856225be812f7fe08994c358"
+"@orbit/indexeddb@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/indexeddb/-/indexeddb-0.15.0.tgz#57a9063d9d1edd6907d3f56816c5f6e16264f071"
   dependencies:
-    "@orbit/core" "^0.11.1"
-    "@orbit/data" "^0.11.1"
-    "@orbit/utils" "^0.11.1"
+    "@orbit/core" "^0.15.0"
+    "@orbit/data" "^0.15.0"
+    "@orbit/utils" "^0.15.0"
 
-"@orbit/jsonapi@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/jsonapi/-/jsonapi-0.11.1.tgz#3481aaf9da964f768af93587907605f0b9736824"
+"@orbit/jsonapi@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/jsonapi/-/jsonapi-0.15.0.tgz#7e595fdf133716063afbca0638fc47c4d7009ebb"
   dependencies:
-    "@orbit/core" "^0.11.1"
-    "@orbit/data" "^0.11.1"
-    "@orbit/utils" "^0.11.1"
+    "@orbit/core" "^0.15.0"
+    "@orbit/data" "^0.15.0"
+    "@orbit/utils" "^0.15.0"
 
-"@orbit/store@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/store/-/store-0.11.1.tgz#416319426583427b280584ed2a7767ab536ce099"
+"@orbit/store@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/store/-/store-0.15.0.tgz#8560babe835a79ca914f317f245c12312a1ca98e"
   dependencies:
-    "@orbit/core" "^0.11.1"
-    "@orbit/data" "^0.11.1"
-    "@orbit/utils" "^0.11.1"
+    "@orbit/core" "^0.15.0"
+    "@orbit/data" "^0.15.0"
+    "@orbit/immutable" "^0.15.0"
+    "@orbit/utils" "^0.15.0"
 
-"@orbit/utils@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@orbit/utils/-/utils-0.11.1.tgz#98f4b1233cb2bf9baa414b517646de4949066115"
+"@orbit/utils@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/utils/-/utils-0.15.0.tgz#496eda743747715e39d27ada001b13170ec10383"
 
 "@types/jasmine@2.5.45":
   version "2.5.45"
