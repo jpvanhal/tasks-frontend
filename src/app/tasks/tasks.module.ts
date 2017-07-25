@@ -6,6 +6,7 @@ import { MdButtonModule, MdCheckboxModule, MdIconModule, MdInputModule, MdListMo
 import { TaskItemCreateComponent } from './task-item-create.component';
 import { TaskItemComponent } from './task-item.component';
 import { TaskListComponent } from './task-list.component';
+import { TaskService } from './task.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,9 @@ import { TaskListComponent } from './task-list.component';
   ],
   exports: [
     TaskListComponent,
-  ]
+  ],
+  providers: [
+    TaskService,
+  ],
 })
 export class TasksModule {}

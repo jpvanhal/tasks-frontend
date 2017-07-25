@@ -9,8 +9,9 @@ import {
     ViewChild,
 } from '@angular/core';
 import { MdInputDirective } from '@angular/material';
-import { Record } from '@orbit/data';
 import { clone } from '@orbit/utils';
+
+import { Task } from './task.interface';
 
 @Component({
   selector: 'app-task-item',
@@ -18,7 +19,7 @@ import { clone } from '@orbit/utils';
 })
 export class TaskItemComponent implements OnChanges {
   editText: string;
-  @Input() task: Record;
+  @Input() task: Task;
   @Output() destroy = new EventEmitter();
   @Output() toggle = new EventEmitter();
   @Output() update = new EventEmitter<string>();

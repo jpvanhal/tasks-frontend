@@ -1,51 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { Record, TransformBuilder } from '@orbit/data';
-import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
 
-import { LiveQueryService } from '../core';
+import { Task } from './task.interface';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
 })
 export class TaskListComponent implements OnInit {
-  tasks$: Observable<Record[]>;
+  tasks$: Observable<Task[]>;
 
-  constructor(private liveQuery: LiveQueryService, private store: Store) { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-    this.tasks$ = this.liveQuery.query(q => q.findRecords('task').sort('-createdAt'), {
-      label: 'Find all tasks',
-    });
+    this.tasks$ = this.taskService.findAll();
   }
 
   create(title: string) {
-    const task = {
-      id: this.store.schema.generateId('task'),
-      type: 'task',
-      attributes: {
-        title,
-        isCompleted: false,
-        createdAt: new Date().toISOString(),
-      },
-    };
-    this.store.update((t: TransformBuilder) => [t.addRecord(task)]);
+    this.taskService.create(title);
   }
 
-  toggle(task: Record) {
-    this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'isCompleted', !task.attributes.isCompleted)]);
+  toggle(task: Task) {
+    this.taskService.toggle(task);
   }
 
-  destroy(task: Record) {
-    this.store.update((t: TransformBuilder) => [t.removeRecord(task)]);
+  destroy(task: Task) {
+    this.taskService.destroy(task);
   }
 
-  update(task: Record, newTitle: string) {
-    this.store.update((t: TransformBuilder) => [t.replaceAttribute(task, 'title', newTitle)]);
+  update(task: Task, newTitle: string) {
+    this.taskService.update(task, newTitle);
   }
 
-  identify(index: number, task: Record) {
+  identify(index: number, task: Task) {
     return task.id;
   }
 }
