@@ -34,7 +34,7 @@
     "@orbit/store": "^0.15.0",
     "@orbit/utils": "^0.15.0",
     "core-js": "^2.4.1",
-    "material-design-icons": "^3.0.1",
+    "material-design-icons-iconfont": "^3.0.3",
     "rxjs": "^5.1.0",
     "whatwg-fetch": "^2.0.3",
     "zone.js": "^0.8.4"
