@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@angular/language-service": "^4.3.3",
+    "@orbit/local-storage": "^0.15.0",
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",

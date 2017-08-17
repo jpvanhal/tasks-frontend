@@ -77,3 +77,11 @@ import 'whatwg-fetch';
  * Need to import at least one locale-data with intl.
  */
 // import 'intl/locale-data/jsonp/en';
+
+/**
+ * Orbit setup
+ */
+import Orbit from '@orbit/core';
+
+Orbit.fetch = (input: RequestInfo, init?: RequestInit) => fetch(input, init);
+Orbit.Promise = Promise;

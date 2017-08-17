@@ -1,4 +1,5 @@
 import { RequestStrategy } from '@orbit/coordinator';
+import { Query } from '@orbit/data';
 
 export function createStoreRemoteQueryOptimisticStrategy() {
   return new RequestStrategy({
@@ -8,16 +9,13 @@ export function createStoreRemoteQueryOptimisticStrategy() {
     on: 'beforeQuery',
 
     target: 'remote',
-    action: 'pull',
+    action(this: RequestStrategy, query: Query) {
+      return (<any>this.target).pull(query).catch(() => {
+        // FIXME: Swallow all rejections. The errors are handled in the pullFail strategy.
+        // See: https://github.com/orbitjs/orbit/issues/451
+      });
+    },
 
     blocking: false,
-
-    catch(this: RequestStrategy, e: any) {
-      console.log('error performing remote.pull', e);
-      this.source.requestQueue.skip();
-      this.target.requestQueue.skip();
-
-      throw e;
-    }
   });
 }

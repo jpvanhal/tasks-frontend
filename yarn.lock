@@ -212,6 +212,14 @@
     "@orbit/data" "^0.15.0"
     "@orbit/utils" "^0.15.0"
 
+"@orbit/local-storage@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@orbit/local-storage/-/local-storage-0.15.0.tgz#cee5d6fec9db0d9292d991a12a3b25a8077c49ad"
+  dependencies:
+    "@orbit/core" "^0.15.0"
+    "@orbit/data" "^0.15.0"
+    "@orbit/utils" "^0.15.0"
+
 "@orbit/store@^0.15.0":
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/@orbit/store/-/store-0.15.0.tgz#8560babe835a79ca914f317f245c12312a1ca98e"

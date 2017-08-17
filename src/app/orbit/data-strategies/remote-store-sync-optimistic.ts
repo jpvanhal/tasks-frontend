@@ -1,6 +1,6 @@
 import { SyncStrategy } from '@orbit/coordinator';
 
-export function createRemoteStoreSyncOptimisticStrategy() {
+export function createRemoteStoreSyncOptimisticStrategy(): SyncStrategy {
   return new SyncStrategy({
     name: 'remote-store-sync-optimistic',
     source: 'remote',
