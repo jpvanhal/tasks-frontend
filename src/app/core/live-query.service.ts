@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { buildQuery, Query, QueryOrExpression } from '@orbit/data';
+import { buildQuery, QueryOrExpression } from '@orbit/data';
 import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
 import { fromEventPattern } from 'rxjs/observable/fromEventPattern';

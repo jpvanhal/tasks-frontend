@@ -2,7 +2,6 @@ import { By } from '@angular/platform-browser';
 import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MdListModule } from '@angular/material';
-import { Record } from '@orbit/data';
 import { Observable } from 'rxjs/Observable';
 
 import { TaskListComponent } from './task-list.component';
@@ -50,7 +49,7 @@ class TaskServiceStub {
   }
 }
 
-fdescribe('TaskListComponent', () => {
+describe('TaskListComponent', () => {
   let component: TaskListComponent;
   let fixture: ComponentFixture<TaskListComponent>;
 

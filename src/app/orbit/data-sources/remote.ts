@@ -1,6 +1,6 @@
 import Orbit from '@orbit/core';
 import { KeyMap, Schema } from '@orbit/data';
-import JSONAPISource, { JSONAPISerializer } from '@orbit/jsonapi';
+import JSONAPISource from '@orbit/jsonapi';
 import { decamelize } from '@orbit/utils';
 
 export function createRemoteSource(keyMap: KeyMap, schema: Schema) {
@@ -20,11 +20,11 @@ export function createRemoteSource(keyMap: KeyMap, schema: Schema) {
     return decamelize(this.schema.pluralize(type));
   }
 
-  source.serializer.resourceRelationship = function(type: string, relationship: string): string {
+  source.serializer.resourceRelationship = function(_type: string, relationship: string): string {
     return decamelize(relationship);
   }
 
-  source.serializer.resourceAttribute = function(type: string, attr: string): string {
+  source.serializer.resourceAttribute = function(_type: string, attr: string): string {
     return decamelize(attr);
   }
 

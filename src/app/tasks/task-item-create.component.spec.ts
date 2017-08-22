@@ -1,3 +1,4 @@
+import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MdInputModule, MdListModule } from '@angular/material';
@@ -10,7 +11,7 @@ describe('TaskItemCreateComponent', () => {
   let component: TaskItemCreateComponent;
   let fixture: ComponentFixture<TaskItemCreateComponent>;
   let onCreate: jasmine.Spy;
-  let input;
+  let input: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -44,7 +45,7 @@ describe('TaskItemCreateComponent', () => {
     describe('when pressing Enter key', () => {
       beforeEach(async(() => {
         input = fixture.debugElement.query(By.css('input'));
-        input.triggerEventHandler('keyup.enter');
+        input.triggerEventHandler('keyup.enter', null);
         fixture.detectChanges();
       }));
 
@@ -60,7 +61,7 @@ describe('TaskItemCreateComponent', () => {
     describe('when pressing Escape key', () => {
       beforeEach(async(() => {
         input = fixture.debugElement.query(By.css('input'));
-        input.triggerEventHandler('keyup.escape');
+        input.triggerEventHandler('keyup.escape', null);
         fixture.detectChanges();
       }));
 
@@ -78,7 +79,7 @@ describe('TaskItemCreateComponent', () => {
     describe('when pressing Enter key', () => {
       beforeEach(async(() => {
         input = fixture.debugElement.query(By.css('input'));
-        input.triggerEventHandler('keyup.enter');
+        input.triggerEventHandler('keyup.enter', null);
         fixture.detectChanges();
       }));
 

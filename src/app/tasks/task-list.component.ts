@@ -33,7 +33,7 @@ export class TaskListComponent implements OnInit {
     this.taskService.update(task, newTitle);
   }
 
-  identify(index: number, task: Task) {
+  identify(_index: number, task: Task) {
     return task.id;
   }
 }

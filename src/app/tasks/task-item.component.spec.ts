@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MdCheckboxModule, MdIconModule, MdInputModule } from '@angular/material';
@@ -100,7 +100,7 @@ describe('TaskItemComponent', () => {
     });
 
     describe('after changing the title in the input', () => {
-      let input;
+      let input: DebugElement;
 
       beforeEach(async(() => {
         input = fixture.debugElement.query(By.css('.task-item__input input'));

@@ -37,7 +37,7 @@ export function createRemotePushFailStrategy() {
           store.rollback(transform.id, -1);
         }
 
-        return remote.requestQueue.skip();
+        remote.requestQueue.skip();
       }
     },
 
