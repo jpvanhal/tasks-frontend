@@ -8,9 +8,8 @@ import Store from '@orbit/store';
 import { BACKUP_SOURCE, REMOTE_SOURCE } from './data-sources';
 import { BackupSource } from './data-sources/backup';
 import { RemoteSource } from './data-sources/remote';
-import { FakeBucket } from './fake-bucket';
-import { MockFetch } from './mock-fetch';
 import { OrbitModule } from './orbit.module';
+import { FakeBucket, MockFetch } from './test-support';
 
 function createBackupSource(schema: Schema) {
   return new LocalStorageSource({
