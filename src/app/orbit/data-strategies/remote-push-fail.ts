@@ -29,7 +29,7 @@ export function createRemotePushFailStrategy(): RequestStrategy {
 
     action(this: RequestStrategy, transform: Transform, e: any): void {
       const remote: Source = this.coordinator.getSource('remote');
-      const store: Store = this.coordinator.getSource('store');
+      const store: Store = <Store>this.coordinator.getSource('store');
 
       const retry = (timeout = 5000) => {
         setTimeout(() => {
