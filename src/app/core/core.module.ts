@@ -1,5 +1,4 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { KeyMap } from '@orbit/data';
 
 import { OrbitModule } from '../orbit';
 import { LiveQueryService } from './live-query.service';
@@ -10,7 +9,6 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
     OrbitModule,
   ],
   providers: [
-    KeyMap,
     LiveQueryService,
   ]
 })

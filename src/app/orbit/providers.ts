@@ -1,24 +1,22 @@
 import { APP_INITIALIZER, Provider } from '@angular/core';
-import Coordinator, { Strategy } from '@orbit/coordinator';
-import { Bucket } from '@orbit/core';
-import { KeyMap, Schema, Source } from '@orbit/data';
-import Store from '@orbit/store';
 
 import { createBucket } from './bucket';
 import { createCoordinator, initializeCoordinator } from './coordinator';
 import { DATA_SOURCE_PROVIDERS } from './data-sources';
 import { DATA_STRATEGY_PROVIDERS } from './data-strategies';
+import { createKeyMap } from './key-map';
 import { createSchema } from './schema';
 import { createStore } from './store';
+import { BUCKET, COORDINATOR, KEY_MAP, SCHEMA, SOURCE, STORE, STRATEGY } from './tokens';
 
 export const ORBIT_PROVIDERS: Provider[] = [
-  KeyMap,
-  { provide: Bucket, useFactory: createBucket },
-  { provide: Schema, useFactory: createSchema },
-  { provide: Store, useFactory: createStore, deps: [ Bucket, KeyMap, Schema ] },
-  { provide: Source, useExisting: Store, multi: true },
+  { provide: KEY_MAP, useFactory: createKeyMap },
+  { provide: BUCKET, useFactory: createBucket },
+  { provide: SCHEMA, useFactory: createSchema },
+  { provide: STORE, useFactory: createStore, deps: [ BUCKET, KEY_MAP, SCHEMA ] },
+  { provide: SOURCE, useExisting: STORE, multi: true },
   DATA_SOURCE_PROVIDERS,
   DATA_STRATEGY_PROVIDERS,
-  { provide: Coordinator, useFactory: createCoordinator, deps: [ Source, Strategy ] },
-  { provide: APP_INITIALIZER, useFactory: initializeCoordinator, deps: [ Coordinator ], multi: true },
+  { provide: COORDINATOR, useFactory: createCoordinator, deps: [ SOURCE, STRATEGY ] },
+  { provide: APP_INITIALIZER, useFactory: initializeCoordinator, deps: [ COORDINATOR ], multi: true },
 ];

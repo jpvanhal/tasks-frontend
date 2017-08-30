@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { buildQuery, QueryOrExpression } from '@orbit/data';
 import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
@@ -7,10 +7,12 @@ import { merge } from 'rxjs/observable/merge';
 import { map } from 'rxjs/operator/map';
 import { startWith } from 'rxjs/operator/startWith';
 
+import { STORE } from '../orbit';
+
 
 @Injectable()
 export class LiveQueryService {
-  constructor(private store: Store) { }
+  constructor(@Inject(STORE) private store: Store) { }
 
   query(queryOrExpression: QueryOrExpression, options?: object, id?: string): Observable<any> {
     const query = buildQuery(queryOrExpression, options, id, this.store.queryBuilder);

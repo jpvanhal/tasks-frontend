@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/skip';
 import 'rxjs/add/operator/take';
 
+import { STORE } from '../orbit';
 import { LiveQueryService } from './live-query.service';
 
 describe('LiveQueryService', () => {
@@ -28,7 +29,7 @@ describe('LiveQueryService', () => {
       providers: [
         LiveQueryService,
         {
-          provide: Store,
+          provide: STORE,
           useValue: store,
         },
       ]

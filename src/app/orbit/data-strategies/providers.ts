@@ -1,6 +1,6 @@
 import { Provider } from '@angular/core';
-import { Strategy } from '@orbit/coordinator';
 
+import { STRATEGY } from '../tokens';
 import { createEventLoggingStrategy } from './event-logging';
 import { createLogTruncationStrategy } from './log-truncation';
 import { createRemotePullFailStrategy } from './remote-pull-fail';
@@ -12,13 +12,13 @@ import { createStoreRemoteQueryOptimisticStrategy } from './store-remote-query-o
 import { createStoreRemoteUpdateOptimisticStrategy } from './store-remote-update-optimistic';
 
 export const DATA_STRATEGY_PROVIDERS: Provider[] = [
-  { provide: Strategy, multi: true, useFactory: createEventLoggingStrategy },
-  { provide: Strategy, multi: true, useFactory: createLogTruncationStrategy },
-  { provide: Strategy, multi: true, useFactory: createRemotePullFailStrategy },
-  { provide: Strategy, multi: true, useFactory: createRemotePullStoreEvictionStrategy },
-  { provide: Strategy, multi: true, useFactory: createRemotePushFailStrategy },
-  { provide: Strategy, multi: true, useFactory: createRemoteStoreSyncOptimisticStrategy },
-  { provide: Strategy, multi: true, useFactory: createStoreBackupSyncPessimisticStrategy },
-  { provide: Strategy, multi: true, useFactory: createStoreRemoteQueryOptimisticStrategy },
-  { provide: Strategy, multi: true, useFactory: createStoreRemoteUpdateOptimisticStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createEventLoggingStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createLogTruncationStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createRemotePullFailStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createRemotePullStoreEvictionStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createRemotePushFailStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createRemoteStoreSyncOptimisticStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createStoreBackupSyncPessimisticStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createStoreRemoteQueryOptimisticStrategy },
+  { provide: STRATEGY, multi: true, useFactory: createStoreRemoteUpdateOptimisticStrategy },
 ];

@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { TransformBuilder } from '@orbit/data';
 import Store from '@orbit/store';
 import { Observable } from 'rxjs/Observable';
 
 import { LiveQueryService } from '../core';
+import { STORE } from '../orbit';
 import { Task } from './task.interface';
 
 @Injectable()
 export class TaskService {
-  constructor(private liveQuery: LiveQueryService, private store: Store) { }
+  constructor(private liveQuery: LiveQueryService, @Inject(STORE) private store: Store) { }
 
   findAll(): Observable<Task[]> {
     return this.liveQuery.query(q => q.findRecords('task').sort('-createdAt'), {

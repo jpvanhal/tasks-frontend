@@ -10,6 +10,7 @@ import { BackupSource } from './data-sources/backup';
 import { RemoteSource } from './data-sources/remote';
 import { OrbitModule } from './orbit.module';
 import { FakeBucket, MockFetch } from './test-support';
+import { BUCKET, COORDINATOR, SCHEMA, STORE } from './tokens';
 
 function createBackupSource(schema: Schema) {
   return new LocalStorageSource({
@@ -34,15 +35,15 @@ describe('Orbit Integration', () => {
     TestBed.configureTestingModule({
       imports: [OrbitModule],
       providers: [
-        { provide: Bucket, useFactory: createBucket },
-        { provide: BACKUP_SOURCE, useFactory: createBackupSource, deps: [ Schema ] },
+        { provide: BUCKET, useFactory: createBucket },
+        { provide: BACKUP_SOURCE, useFactory: createBackupSource, deps: [ SCHEMA ] },
       ],
     });
-    coordinator = TestBed.get(Coordinator);
+    coordinator = TestBed.get(COORDINATOR);
 
     backup = TestBed.get(BACKUP_SOURCE)
     remote = TestBed.get(REMOTE_SOURCE);
-    store = TestBed.get(Store);
+    store = TestBed.get(STORE);
     mockFetch = new MockFetch();
   }));
 
