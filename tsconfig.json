@@ -9,23 +9,24 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2016",
+      "es2017",
       "dom"
     ],
     "paths":{
-      "@orbit/coordinator": ["../node_modules/@orbit/coordinator/dist/commonjs/es5"],
-      "@orbit/core": ["../node_modules/@orbit/core/dist/commonjs/es5"],
-      "@orbit/data": ["../node_modules/@orbit/data/dist/commonjs/es5"],
-      "@orbit/indexeddb": ["../node_modules/@orbit/indexeddb/dist/commonjs/es5"],
-      "@orbit/store": ["../node_modules/@orbit/store/dist/commonjs/es5"],
-      "@orbit/utils": ["../node_modules/@orbit/utils/dist/commonjs/es5"]
+      "@orbit/coordinator": ["../node_modules/@orbit/coordinator/src"],
+      "@orbit/core": ["../node_modules/@orbit/core/src"],
+      "@orbit/data": ["../node_modules/@orbit/data/src"],
+      "@orbit/immutable": ["../node_modules/@orbit/immutable/src"],
+      "@orbit/indexeddb": ["../node_modules/@orbit/indexeddb/src"],
+      "@orbit/indexeddb-bucket": ["../node_modules/@orbit/indexeddb-bucket/src"],
+      "@orbit/jsonapi": ["../node_modules/@orbit/jsonapi/src"],
+      "@orbit/store": ["../node_modules/@orbit/store/src"],
+      "@orbit/utils": ["../node_modules/@orbit/utils/src"]
     }
   }
 }

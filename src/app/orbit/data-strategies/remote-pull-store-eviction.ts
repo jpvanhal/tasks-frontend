@@ -12,7 +12,7 @@ export function createRemotePullStoreEvictionStrategy() {
 
     action(this: ConnectionStrategy, query: Query, result: Transform[]) {
       return new Promise((resolve) => {
-        const store: Store = this.coordinator.getSource('store');
+        const store: Store = <Store>this.coordinator.getSource('store');
 
         if (query.expression.op !== 'findRecords') {
           return;

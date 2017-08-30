@@ -15,7 +15,7 @@ export function createRemotePullFailStrategy(): RequestStrategy {
 
     action(this: RequestStrategy, query: Query, e: any): void {
       const remote: Source = this.coordinator.getSource('remote');
-      const store: Store = this.coordinator.getSource('store');
+      const store: Store = <Store>this.coordinator.getSource('store');
 
       const ignore = () => {
         remote.requestQueue.skip();

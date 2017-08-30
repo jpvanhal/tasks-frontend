@@ -10,8 +10,8 @@ export function createCoordinator(sources: Source[], strategies: Strategy[]) {
 
 export function initializeCoordinator(coordinator: Coordinator) {
   return (): Promise<void> => {
-    const backup: BackupSource = coordinator.getSource('backup');
-    const store: Store = coordinator.getSource('store');
+    const backup: BackupSource = <BackupSource>coordinator.getSource('backup');
+    const store: Store = <Store>coordinator.getSource('store');
 
     return backup.pull((q) => q.findRecords())
       .then((transform) => store.sync(transform))
