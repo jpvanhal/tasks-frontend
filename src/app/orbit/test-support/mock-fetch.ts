@@ -57,7 +57,6 @@ export class MockFetch {
   }
 
   private handle(input: RequestInfo, init?: RequestInit): Promise<Response> {
-    console.log('FETCH');
     let request: TestRequest;
     const promise = new Promise<Response>((resolve, reject) => {
       request = new TestRequest(new Request(input, init), resolve, reject);
