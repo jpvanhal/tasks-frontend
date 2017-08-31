@@ -3,6 +3,12 @@
     { "url": "heroku/nodejs" },
     { "url": "https://github.com/heroku/heroku-buildpack-static.git" }
   ],
+  "env": {
+    "BACKEND_URL": {
+      "description": "The URL where the frontend app makes API requests to.",
+      "value": "https://jpvanhal-tasks-backend.herokuapp.com/"
+    }
+  },
   "environments": {
     "test": {
       "buildpacks":[
