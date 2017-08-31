@@ -8,7 +8,7 @@
   },
   "proxies": {
     "/api/": {
-      "origin": "https://${BACKEND_APP_NAME}.herokuapp.com/"
+      "origin": "${BACKEND_URL}"
     }
   }
 }
