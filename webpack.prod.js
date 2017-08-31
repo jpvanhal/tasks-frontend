@@ -13,12 +13,13 @@ const { StaticAssetPlugin } = require('@angular/cli/plugins/static-asset');
 const { GlobCopyWebpackPlugin, BaseHrefWebpackPlugin, SuppressExtractedTextChunksWebpackPlugin } = require('@angular/cli/plugins/webpack');
 const { CommonsChunkPlugin, UglifyJsPlugin } = require('webpack').optimize;
 const { AngularServiceWorkerPlugin } = require('@angular/service-worker/build/webpack');
+const AppCachePlugin = require('appcache-webpack-plugin');
 const { AotPlugin } = require('@ngtools/webpack');
 
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
-const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+const entryPoints = ["inline","polyfills","appcache","sw-register","styles","vendor","main"];
 const minimizeCss = true;
 const baseHref = "";
 const deployUrl = "";
@@ -92,6 +93,9 @@ module.exports = {
     "styles": [
       "./node_modules/material-design-icons-iconfont/dist/material-design-icons.css",
       "./src/styles.scss"
+    ],
+    "appcache": [
+      "./src/appcache.ts",
     ],
     "sw-register": [
       "./node_modules/@angular/service-worker/build/assets/register-basic.min.js"
@@ -477,6 +481,11 @@ module.exports = {
           "glob": "ngsw-manifest.json",
           "input": path.resolve(process.cwd(), 'src'),
           "output": ""
+        },
+        {
+          "glob": "appcache-loader.html",
+          "input": path.resolve(nodeModules, 'appcache-nanny'),
+          "output": ""
         }
       ],
       "globOptions": {
@@ -485,6 +494,10 @@ module.exports = {
       }
     }),
     new AngularServiceWorkerPlugin({ baseHref: '/' }),
+    new AppCachePlugin({
+      cache: ['/'],
+      output: 'manifest.appcache'
+    }),
     new StaticAssetPlugin('worker-basic.min.js', workerContents),
     new licensePlugin({
       "pattern": /^(MIT|ISC|BSD.*)$/
