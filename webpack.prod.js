@@ -58,6 +58,9 @@ const postcssPlugins = function () {
         ].concat(minimizeCss ? [cssnano(minimizeOptions)] : []);
     };
 
+const swModule = path.resolve(nodeModules, '@angular/service-worker');
+const workerPath = path.resolve(swModule, 'bundles/worker-basic.min.js');
+const workerContents = fs.readFileSync(workerPath).toString();
 
 
 
@@ -472,7 +475,7 @@ module.exports = {
         "ngsw-manifest.json",
         {
           "glob": "ngsw-manifest.json",
-          "input": "/Users/janne/Documents/Development/jpvanhal/tasks-frontend/src",
+          "input": path.resolve(process.cwd(), 'src'),
           "output": ""
         }
       ],
@@ -481,8 +484,8 @@ module.exports = {
         "optional": true
       }
     }),
-    new AngularServiceWorkerPlugin(),
-    new StaticAssetPlugin(),
+    new AngularServiceWorkerPlugin({ baseHref: '/' }),
+    new StaticAssetPlugin('worker-basic.min.js', workerContents),
     new licensePlugin({
       "pattern": /^(MIT|ISC|BSD.*)$/
     }),
