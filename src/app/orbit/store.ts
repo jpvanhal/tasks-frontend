@@ -1,7 +1,7 @@
 import { Bucket } from '@orbit/core';
-import { KeyMap, Schema } from '@orbit/data';
+import { Schema } from '@orbit/data';
 import Store from '@orbit/store';
 
-export function createStore(bucket: Bucket, keyMap: KeyMap, schema: Schema) {
-  return new Store({ bucket, keyMap, schema });
+export function createStore(bucket: Bucket, schema: Schema) {
+  return new Store({ bucket, schema });
 }

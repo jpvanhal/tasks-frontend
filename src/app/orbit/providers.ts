@@ -4,16 +4,14 @@ import { createBucket } from './bucket';
 import { createCoordinator, initializeCoordinator } from './coordinator';
 import { DATA_SOURCE_PROVIDERS } from './data-sources';
 import { DATA_STRATEGY_PROVIDERS } from './data-strategies';
-import { createKeyMap } from './key-map';
 import { createSchema } from './schema';
 import { createStore } from './store';
-import { BUCKET, COORDINATOR, KEY_MAP, SCHEMA, SOURCE, STORE, STRATEGY } from './tokens';
+import { BUCKET, COORDINATOR, SCHEMA, SOURCE, STORE, STRATEGY } from './tokens';
 
 export const ORBIT_PROVIDERS: Provider[] = [
-  { provide: KEY_MAP, useFactory: createKeyMap },
   { provide: BUCKET, useFactory: createBucket },
   { provide: SCHEMA, useFactory: createSchema },
-  { provide: STORE, useFactory: createStore, deps: [ BUCKET, KEY_MAP, SCHEMA ] },
+  { provide: STORE, useFactory: createStore, deps: [ BUCKET, SCHEMA ] },
   { provide: SOURCE, useExisting: STORE, multi: true },
   DATA_SOURCE_PROVIDERS,
   DATA_STRATEGY_PROVIDERS,

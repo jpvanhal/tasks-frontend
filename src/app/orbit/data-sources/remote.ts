@@ -1,13 +1,12 @@
 import Orbit from '@orbit/core';
-import { KeyMap, Pullable, Pushable, Schema, Source } from '@orbit/data';
+import { Pullable, Pushable, Schema, Source } from '@orbit/data';
 import JSONAPISource from '@orbit/jsonapi';
 import { decamelize } from '@orbit/utils';
 
 export type RemoteSource = Source & Pullable & Pushable;
 
-export function createRemoteSource(keyMap: KeyMap, schema: Schema): RemoteSource {
+export function createRemoteSource(schema: Schema): RemoteSource {
   const source = new JSONAPISource({
-    keyMap,
     maxRequestsPerTransform: 1,
     name: 'remote',
     namespace: 'api',
