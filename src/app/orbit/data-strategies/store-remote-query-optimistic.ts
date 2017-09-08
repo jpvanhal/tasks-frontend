@@ -1,5 +1,5 @@
 import { RequestStrategy } from '@orbit/coordinator';
-import { Query } from '@orbit/data';
+import { buildQuery, FindRecords, Query, QueryExpression } from '@orbit/data';
 
 export function createStoreRemoteQueryOptimisticStrategy() {
   return new RequestStrategy({
@@ -10,6 +10,15 @@ export function createStoreRemoteQueryOptimisticStrategy() {
 
     target: 'remote',
     action(this: RequestStrategy, query: Query) {
+      if (query.expression.op === 'findRecords') {
+        const expression: FindRecords = {
+          page: <any>{
+            size: 0,
+          },
+          ...<FindRecords>query.expression
+        };
+        query = buildQuery(expression);
+      }
       return (<any>this.target).pull(query).catch(() => {
         // FIXME: Swallow all rejections. The errors are handled in the pullFail strategy.
         // See: https://github.com/orbitjs/orbit/issues/451
