@@ -579,7 +579,7 @@ describe('Orbit Integration', () => {
 
     // a GET /api/tasks request was made, but encounters a network error
     mockFetch
-      .expectOne({ method: 'GET', url: '/api/tasks'})
+      .expectOne({ method: 'GET', url: '/api/tasks?page%5Bsize%5D=0'})
       .error(new NetworkError(':('));
     flushMicrotasks();
 
