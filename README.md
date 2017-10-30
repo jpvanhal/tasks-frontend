@@ -1,28 +1,27 @@
-# TasksFrontend
+# Tasks Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
+This is the client-side component for the offline-first application I implemented for my thesis. 
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [node](https://nodejs.org/en/)
+* [yarn](https://yarnpkg.com/)
+* [tasks-backend](https://github.com/jpvanhal/tasks-backend)
 
-## Code scaffolding
+## Development
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+### Setting up the development environment
 
-## Build
+Run `yarn install` to install the node dependencies for the project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Running the development server
 
-## Running unit tests
+Run `yarn start` to start the development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Running the tests
 
-## Running end-to-end tests
+Run `yarn test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+## Deploying
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
